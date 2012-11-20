@@ -104,7 +104,7 @@ public class Interfaz2 extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Stock Control 1.2 BETA");
+        setTitle("Stock Control 1.2 FINAL");
         setBackground(new java.awt.Color(255, 255, 255));
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 102, 102));
@@ -869,17 +869,8 @@ public class Interfaz2 extends javax.swing.JFrame {
         Producto RockAlternativo = new Producto("Rock Alternativo", 800, 140.00,210.00);
         Producto Boleros = new Producto("Boleros", 300, 90.00,135.00);
         Producto Cumbia = new Producto("Cumbia", 700, 105.00,157.50);
-        
-        in.Baja(RockPop);
-        in.Baja(Reggaeton);
-        in.Baja(Salsa);
-        in.Baja(Metal);
-        in.Baja(Banda);
-        in.Baja(Balada);
-        in.Baja(Psycho);
-        in.Baja(RockAlternativo);
-        in.Baja(Boleros);
-        in.Baja(Cumbia);
+       
+        in.BorrarTodo();
         
         in.Alta(RockPop);
         in.Alta(Reggaeton);
@@ -891,22 +882,12 @@ public class Interfaz2 extends javax.swing.JFrame {
         in.Alta(RockAlternativo);
         in.Alta(Boleros);
         in.Alta(Cumbia);
+        
         in.Guardar();
         
         Inventario in2 = new Inventario("datos.txt");
-       
-        
-        in2.Baja(RockPop);
-        in2.Baja(Reggaeton);
-        in2.Baja(Salsa);
-        in2.Baja(Metal);
-        in2.Baja(Banda);
-        in2.Baja(Balada);
-        in2.Baja(Psycho);
-        in2.Baja(RockAlternativo);
-        in2.Baja(Boleros);
-        in2.Baja(Cumbia);
-        
+
+        in2.BorrarTodo();
         in2.Alta(RockPop);
         in2.Alta(Reggaeton);
         in2.Alta(Salsa);

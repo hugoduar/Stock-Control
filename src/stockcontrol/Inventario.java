@@ -105,4 +105,10 @@ public class Inventario{
          }
          return archivo.Escribir(cambios, false);
     }
+    public void BorrarTodo(){
+        for (int i = 0; i < inv.size(); i++) {
+            Baja(i);
+        }
+        Guardar();
+    }
 }
