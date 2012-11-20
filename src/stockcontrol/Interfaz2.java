@@ -93,6 +93,8 @@ public class Interfaz2 extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -521,6 +523,25 @@ public class Interfaz2 extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stockcontrol/enterall_icon.png"))); // NOI18N
         jMenu4.setText("Stock Control");
         jMenu4.setDelay(1000);
+
+        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem6.setText("Reiniciar Inventario");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem6);
+
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setText("Salir");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMenuItem5);
+
         jMenuBar1.add(jMenu4);
 
         jMenu1.setBackground(new java.awt.Color(0, 153, 153));
@@ -694,7 +715,7 @@ public class Interfaz2 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Inventario in = new Inventario("datos2.txt");
+        Inventario in = new Inventario("datos.txt");
         Producto producto = new Producto();
         Producto productoMod = new Producto(jTextField3.getText(),Integer.parseInt(jTextField4.getText()),Double.valueOf(jTextField5.getText()),Double.valueOf(jTextField6.getText()));
         producto.setproducto(jTextField3.getText());
@@ -761,40 +782,6 @@ public class Interfaz2 extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         Inventario in = new Inventario("datos.txt");
-       
-        Producto RockPop = new Producto("Rock Pop", 1200, 150.00,255.00);
-        Producto Reggaeton = new Producto("Reggaeton", 800, 100.00,150.00);
-        Producto Salsa = new Producto("Salsa", 1500, 110.00,165.00);
-        Producto Metal = new Producto("Metal", 2000, 120.00,180.00);
-        Producto Banda = new Producto("Banda", 1800, 110.00,165.00);
-        Producto Balada = new Producto("Balada", 900, 105.00,157.50);
-        Producto Psycho = new Producto("Psycho", 500, 180.00,270.00);
-        Producto RockAlternativo = new Producto("Rock Alternativo", 800, 140.00,210.00);
-        Producto Boleros = new Producto("Boleros", 300, 90.00,135.00);
-        Producto Cumbia = new Producto("Cumbia", 700, 105.00,157.50);
-        
-        in.Baja(RockPop);
-        in.Baja(Reggaeton);
-        in.Baja(Salsa);
-        in.Baja(Metal);
-        in.Baja(Banda);
-        in.Baja(Balada);
-        in.Baja(Psycho);
-        in.Baja(RockAlternativo);
-        in.Baja(Boleros);
-        in.Baja(Cumbia);
-        
-        in.Alta(RockPop);
-        in.Alta(Reggaeton);
-        in.Alta(Salsa);
-        in.Alta(Metal);
-        in.Alta(Banda);
-        in.Alta(Balada);
-        in.Alta(Psycho);
-        in.Alta(RockAlternativo);
-        in.Alta(Boleros);
-        in.Alta(Cumbia);
-        in.Guardar();
         
         Producto p = new Producto();
         int pos;
@@ -860,8 +847,78 @@ public class Interfaz2 extends javax.swing.JFrame {
         Inventario inMod = new Inventario("datos.txt");
         Inventario in =  new Inventario("datos2.txt");
         Venta v = new Venta();
-        jLabel45.setText(String.valueOf(v.CorteDeCaja()));
+        jLabel45.setText("Las ganancias son $"+String.valueOf(v.CorteDeCaja()));
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        Inventario in = new Inventario("datos2.txt");
+       
+        Producto RockPop = new Producto("Rock Pop", 1200, 150.00,255.00);
+        Producto Reggaeton = new Producto("Reggaeton", 800, 100.00,150.00);
+        Producto Salsa = new Producto("Salsa", 1500, 110.00,165.00);
+        Producto Metal = new Producto("Metal", 2000, 120.00,180.00);
+        Producto Banda = new Producto("Banda", 1800, 110.00,165.00);
+        Producto Balada = new Producto("Balada", 900, 105.00,157.50);
+        Producto Psycho = new Producto("Psycho", 500, 180.00,270.00);
+        Producto RockAlternativo = new Producto("Rock Alternativo", 800, 140.00,210.00);
+        Producto Boleros = new Producto("Boleros", 300, 90.00,135.00);
+        Producto Cumbia = new Producto("Cumbia", 700, 105.00,157.50);
+        
+        in.Baja(RockPop);
+        in.Baja(Reggaeton);
+        in.Baja(Salsa);
+        in.Baja(Metal);
+        in.Baja(Banda);
+        in.Baja(Balada);
+        in.Baja(Psycho);
+        in.Baja(RockAlternativo);
+        in.Baja(Boleros);
+        in.Baja(Cumbia);
+        
+        in.Alta(RockPop);
+        in.Alta(Reggaeton);
+        in.Alta(Salsa);
+        in.Alta(Metal);
+        in.Alta(Banda);
+        in.Alta(Balada);
+        in.Alta(Psycho);
+        in.Alta(RockAlternativo);
+        in.Alta(Boleros);
+        in.Alta(Cumbia);
+        in.Guardar();
+        
+        Inventario in2 = new Inventario("datos.txt");
+       
+        
+        in2.Baja(RockPop);
+        in2.Baja(Reggaeton);
+        in2.Baja(Salsa);
+        in2.Baja(Metal);
+        in2.Baja(Banda);
+        in2.Baja(Balada);
+        in2.Baja(Psycho);
+        in2.Baja(RockAlternativo);
+        in2.Baja(Boleros);
+        in2.Baja(Cumbia);
+        
+        in2.Alta(RockPop);
+        in2.Alta(Reggaeton);
+        in2.Alta(Salsa);
+        in2.Alta(Metal);
+        in2.Alta(Banda);
+        in2.Alta(Balada);
+        in2.Alta(Psycho);
+        in2.Alta(RockAlternativo);
+        in2.Alta(Boleros);
+        in2.Alta(Cumbia);
+        in2.Guardar();
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -958,6 +1015,8 @@ public class Interfaz2 extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
