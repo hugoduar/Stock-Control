@@ -694,7 +694,7 @@ public class Interfaz2 extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Inventario in = new Inventario("datos.txt");
+        Inventario in = new Inventario("datos2.txt");
         Producto producto = new Producto();
         Producto productoMod = new Producto(jTextField3.getText(),Integer.parseInt(jTextField4.getText()),Double.valueOf(jTextField5.getText()),Double.valueOf(jTextField6.getText()));
         producto.setproducto(jTextField3.getText());
@@ -773,6 +773,17 @@ public class Interfaz2 extends javax.swing.JFrame {
         Producto Boleros = new Producto("Boleros", 300, 90.00,135.00);
         Producto Cumbia = new Producto("Cumbia", 700, 105.00,157.50);
         
+        in.Baja(RockPop);
+        in.Baja(Reggaeton);
+        in.Baja(Salsa);
+        in.Baja(Metal);
+        in.Baja(Banda);
+        in.Baja(Balada);
+        in.Baja(Psycho);
+        in.Baja(RockAlternativo);
+        in.Baja(Boleros);
+        in.Baja(Cumbia);
+        
         in.Alta(RockPop);
         in.Alta(Reggaeton);
         in.Alta(Salsa);
@@ -849,7 +860,7 @@ public class Interfaz2 extends javax.swing.JFrame {
         Inventario inMod = new Inventario("datos.txt");
         Inventario in =  new Inventario("datos2.txt");
         Venta v = new Venta();
-        jLabel45.setText(String.valueOf(v.CorteDeCaja(in, inMod)));
+        jLabel45.setText(String.valueOf(v.CorteDeCaja()));
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

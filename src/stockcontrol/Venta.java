@@ -98,49 +98,29 @@ public class Venta {
         return pMod;
     }
     
-    public float MostrarGanancia(Producto p){
-        Inventario in = new Inventario("datos.txt");
-        Archivo arch = new Archivo("datos.txt");
-        Producto new_producto = new Producto();
-        float ganancia=0.00f;
-        for (int i = 0; i < in.Tamanio(); i++) {
-            String info;
-            info=arch.Leer();
-            if(!info.isEmpty()){
-                do{
-                    new_producto.setproducto(info.substring(0, info.indexOf("\t")));
-                    info=info.substring(info.indexOf("\t")+1);
-                    new_producto.setcantidad(Integer.parseInt(
-                            info.substring(0, info.indexOf("\t"))));
-                    info=info.substring(info.indexOf("\t")+1);
-                    new_producto.setprecioUnitario(Double.parseDouble(
-                            info.substring(0, info.indexOf("\t"))));
-                    info=info.substring(info.indexOf("\t")+1);
-                    new_producto.setprecioFinal(Double.parseDouble(
-                            info.substring(0, info.indexOf("\n")==-1?
-                            info.length():info.indexOf("\n"))));
-                    info=info.substring(info.indexOf("\n")==-1?
-                            info.length():info.indexOf("\n")+1);
-                }while(info.length()>0);
-            ganancia += new_producto.getprecioFinal()-new_producto.getprecioUnitario();
-            }
-        }
+    public double MostrarGanancia(Producto p){
+        double ganancia = p.getprecioFinal()-p.getprecioUnitario();
         return ganancia;
     }
-    public double CorteDeCaja(Inventario in, Inventario inMod){
+    public double CorteDeCaja(){
+        Inventario inMod = new Inventario("datos.txt");
+        Inventario in = new Inventario("datos2.txt");
         Producto p = new Producto();
         Producto pMod = new Producto();
-        int cantidadVendidos;
-        double ganancia=0.00;
+        int pos;
+        int cantidadVenta;
+        double ganancia=0.0;
+        
         for (int i = 0; i < in.Tamanio(); i++) {
-            int pos = 0;
-            int pos2; 
             p = in.Consulta(i);
-            pos2 = inMod.BuscarProducto(p.getproducto());
-            pMod = inMod.Consulta(pos2);
-            cantidadVendidos = p.getcantidad()-pMod.getcantidad();
-            ganancia = ganancia + (MostrarGanancia(p)*cantidadVendidos);
+            pos = inMod.BuscarProducto(p.getproducto());
+            pMod = inMod.Consulta(pos);
+            cantidadVenta = p.getcantidad()-pMod.getcantidad();
+            in.ModificarCantidad(p.getproducto(), pMod.getcantidad());
+            ganancia += MostrarGanancia(p)*cantidadVenta;
+            
         }
+        in.Guardar();
         return ganancia;
     }
     

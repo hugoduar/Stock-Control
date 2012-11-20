@@ -61,8 +61,11 @@ public class Principal {
         in.Alta(Boleros);
         in.Alta(Cumbia);
         in.Guardar();
-        in.Guardar();*/
-        
-        
+        in.Guardar();
+        Inventario inMod = new Inventario("datos.txt");
+        Inventario in = new Inventario("datos2.txt");
+        Venta v = new Venta();
+        v.RealizarVenta("Cumbia", 100);
+        System.out.println(v.CorteDeCaja());*/
     }
 }
