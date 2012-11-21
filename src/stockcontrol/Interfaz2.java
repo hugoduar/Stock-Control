@@ -27,6 +27,9 @@ public class Interfaz2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
+        jDialog1 = new javax.swing.JDialog();
+        jLabel46 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -38,6 +41,7 @@ public class Interfaz2 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -83,29 +87,62 @@ public class Interfaz2 extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+
+        jDialog1.setAlwaysOnTop(true);
+        jDialog1.setMinimumSize(new java.awt.Dimension(442, 202));
+        jDialog1.setResizable(false);
+
+        jLabel46.setText("ERROR: No se pueden introducir datos menores a 0");
+
+        jButton6.setText("Aceptar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout jDialog1Layout = new org.jdesktop.layout.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jDialog1Layout.createSequentialGroup()
+                .add(jDialog1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jDialog1Layout.createSequentialGroup()
+                        .add(59, 59, 59)
+                        .add(jLabel46))
+                    .add(jDialog1Layout.createSequentialGroup()
+                        .add(165, 165, 165)
+                        .add(jButton6)))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(jDialog1Layout.createSequentialGroup()
+                .add(60, 60, 60)
+                .add(jLabel46)
+                .add(18, 18, 18)
+                .add(jButton6)
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Stock Control 1.2 FINAL");
         setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(299, 47));
+        setResizable(false);
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 102, 102));
 
@@ -163,8 +200,9 @@ public class Interfaz2 extends javax.swing.JFrame {
                         .add(42, 42, 42)
                         .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(jButton5, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(jLabel45, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(143, Short.MAX_VALUE))
+                            .add(jLabel45, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .add(jLabel47, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 241, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -185,12 +223,14 @@ public class Interfaz2 extends javax.swing.JFrame {
                     .add(jButton2))
                 .add(18, 18, 18)
                 .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jLabel47, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 24, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         jPanel1.setVisible(false);
 
-        jPanel1.setBounds(40, 10, 618, 255);
+        jPanel1.setBounds(40, 10, 603, 328);
         jLayeredPane1.add(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jLabel3.setText("Genero");
@@ -277,12 +317,6 @@ public class Interfaz2 extends javax.swing.JFrame {
 
         jLabel43.setText("0");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-
         jButton3.setText("Modificar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -296,6 +330,8 @@ public class Interfaz2 extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Rock Pop", "Salsa", "Metal", "Banda", "Balada", "Psycho", "Rock Alternativo", "Boleros", "Cumbia" }));
 
         org.jdesktop.layout.GroupLayout jPanel3Layout = new org.jdesktop.layout.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -335,7 +371,8 @@ public class Interfaz2 extends javax.swing.JFrame {
                                     .add(jLabel24, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .add(jLabel25, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .add(jPanel3Layout.createSequentialGroup()
-                                .add(0, 0, Short.MAX_VALUE)
+                                .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 75, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -368,26 +405,21 @@ public class Interfaz2 extends javax.swing.JFrame {
                             .add(jLabel42, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .add(118, 118, 118))
                     .add(jPanel3Layout.createSequentialGroup()
-                        .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 118, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 77, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(43, 43, 43)
-                        .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 78, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(0, 0, Short.MAX_VALUE)
                         .add(jButton3)
                         .add(25, 25, 25))
                     .add(jPanel3Layout.createSequentialGroup()
-                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                        .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(jPanel3Layout.createSequentialGroup()
                                 .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 74, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 102, Short.MAX_VALUE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 129, Short.MAX_VALUE)
                                 .add(jLabel5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 100, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(18, 18, 18)
                                 .add(jLabel6)
                                 .add(58, 58, 58)
                                 .add(jLabel7))
-                            .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 505, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 76, Short.MAX_VALUE)
+                            .add(jSeparator1))
+                        .add(49, 49, 49)
                         .add(jButton4)
                         .add(12, 12, 12))))
         );
@@ -406,7 +438,7 @@ public class Interfaz2 extends javax.swing.JFrame {
                     .add(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .add(jButton4)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 13, Short.MAX_VALUE)))
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel3Layout.createSequentialGroup()
                         .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
@@ -426,7 +458,7 @@ public class Interfaz2 extends javax.swing.JFrame {
                                 .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(jLabel8)
                                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jLabel35)))))
-                    .add(jSeparator2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
+                    .add(jSeparator2))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jLabel9)
@@ -479,12 +511,10 @@ public class Interfaz2 extends javax.swing.JFrame {
                     .add(jLabel43, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .add(18, 18, 18)
                 .add(jPanel3Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jTextField6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton3))
-                .add(22, 22, 22))
+                    .add(jButton3)
+                    .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(39, 39, 39))
         );
 
         jPanel3.setVisible(false);
@@ -523,15 +553,6 @@ public class Interfaz2 extends javax.swing.JFrame {
         jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stockcontrol/enterall_icon.png"))); // NOI18N
         jMenu4.setText("Stock Control");
         jMenu4.setDelay(1000);
-
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem6.setText("Reiniciar Inventario");
-        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem6ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jMenuItem6);
 
         jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem5.setText("Salir");
@@ -572,64 +593,48 @@ public class Interfaz2 extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setBackground(new java.awt.Color(0, 153, 153));
-        jMenu3.setText("Ayuda");
-
-        jMenuItem3.setText("Manual");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem3);
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setText("Ayuda (?)");
-        jMenu3.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu3);
-
         setJMenuBar(jMenuBar1);
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE)
+            .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 736, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 437, Short.MAX_VALUE)
+                .add(jLayeredPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Inventario in = new Inventario("datos.txt");
         Venta v = new Venta();
         Producto p = new Producto();
         String producto;
         int cantidad;
-        
-        producto = jTextField1.getText();
-        cantidad = Integer.parseInt(jTextField2.getText());
-        v.RealizarVenta(producto, cantidad);
         Inventario in2 = new Inventario("datos.txt");
         int pos;
         pos = in2.BuscarProducto(jTextField1.getText());
         p = in2.Consulta(pos);
-        if (p.getcantidad()<3) {
-            jLabel4.setText("Tienes: "+p.getcantidad()+" en existencia");
+        cantidad = Integer.parseInt(jTextField2.getText());
+        if(cantidad>0&&cantidad<=p.getcantidad()){
+            producto = jTextField1.getText();
+            v.RealizarVenta(producto, cantidad);
+            if (p.getcantidad()<3) {
+                jLabel4.setText("Tienes: "+p.getcantidad()+" en existencia");
+            }
+            jLabel47.setText("Haz vendido "+jTextField2.getText()+" discos de "+p.getproducto());
+        }else if(cantidad<=0){
+            jLabel47.setText("ERROR: No se pueden introducir cantidades negativas");
         }
+        jTextField1.setText("");
+        jTextField2.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -709,21 +714,44 @@ public class Interfaz2 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Object GeneroSeleccionado = jComboBox1.getSelectedItem();
         Inventario in = new Inventario("datos.txt");
         Producto producto = new Producto();
-        Producto productoMod = new Producto(jTextField3.getText(),Integer.parseInt(jTextField4.getText()),Double.valueOf(jTextField5.getText()),Double.valueOf(jTextField6.getText()));
-        producto.setproducto(jTextField3.getText());
-        in.ModificarCampo(producto, productoMod);
-        in.Guardar();
-        
-        Producto p = new Producto();
+        Producto pMod = new Producto();
         int pos;
+        producto.setproducto(GeneroSeleccionado.toString());
+        pos = in.BuscarProducto(GeneroSeleccionado.toString());
+        producto = in.Consulta(pos);
+        pMod = producto;
+        int cantidad = Integer.parseInt(jTextField4.getText());
+        pMod.setproducto(GeneroSeleccionado.toString());
+        if (cantidad<0){
+            jDialog1.setVisible(true);
+        }else if(in.BuscarProducto(pMod.getproducto())>=0&&in.BuscarProducto(pMod.getproducto())<10&&cantidad>=0){
+            pMod.setcantidad(cantidad);
+            in.ModificarCampo(producto, pMod);
+            in.Guardar();
+        }
+        
+        
+        Inventario in2 = new Inventario("datos2.txt");
+
+        producto.setproducto(GeneroSeleccionado.toString());
+        pos = in2.BuscarProducto(GeneroSeleccionado.toString());
+        producto = in2.Consulta(pos);
+        pMod = producto;
+        pMod.setproducto(GeneroSeleccionado.toString());
+        if (cantidad<0){
+            jDialog1.setVisible(true);
+        }else if(in2.BuscarProducto(pMod.getproducto())>=0&&in2.BuscarProducto(pMod.getproducto())<10&&cantidad>=0){
+            pMod.setcantidad(cantidad);
+            in.ModificarCampo(producto, pMod);
+            in.Guardar();
+        }
+        jTextField4.setText("");
+        Producto p = new Producto();
         pos = in.BuscarProducto("Rock Pop");
         p = in.Consulta(pos);
         jLabel17.setText(String.valueOf(p.getcantidad()));
@@ -855,51 +883,10 @@ public class Interfaz2 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        Inventario in = new Inventario("datos2.txt");
-       
-        Producto RockPop = new Producto("Rock Pop", 1200, 150.00,255.00);
-        Producto Reggaeton = new Producto("Reggaeton", 800, 100.00,150.00);
-        Producto Salsa = new Producto("Salsa", 1500, 110.00,165.00);
-        Producto Metal = new Producto("Metal", 2000, 120.00,180.00);
-        Producto Banda = new Producto("Banda", 1800, 110.00,165.00);
-        Producto Balada = new Producto("Balada", 900, 105.00,157.50);
-        Producto Psycho = new Producto("Psycho", 500, 180.00,270.00);
-        Producto RockAlternativo = new Producto("Rock Alternativo", 800, 140.00,210.00);
-        Producto Boleros = new Producto("Boleros", 300, 90.00,135.00);
-        Producto Cumbia = new Producto("Cumbia", 700, 105.00,157.50);
-       
-        in.BorrarTodo();
-        
-        in.Alta(RockPop);
-        in.Alta(Reggaeton);
-        in.Alta(Salsa);
-        in.Alta(Metal);
-        in.Alta(Banda);
-        in.Alta(Balada);
-        in.Alta(Psycho);
-        in.Alta(RockAlternativo);
-        in.Alta(Boleros);
-        in.Alta(Cumbia);
-        
-        in.Guardar();
-        
-        Inventario in2 = new Inventario("datos.txt");
-
-        in2.BorrarTodo();
-        in2.Alta(RockPop);
-        in2.Alta(Reggaeton);
-        in2.Alta(Salsa);
-        in2.Alta(Metal);
-        in2.Alta(Banda);
-        in2.Alta(Balada);
-        in2.Alta(Psycho);
-        in2.Alta(RockAlternativo);
-        in2.Alta(Boleros);
-        in2.Alta(Cumbia);
-        in2.Guardar();
-    }//GEN-LAST:event_jMenuItem6ActionPerformed
+        jDialog1.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -941,6 +928,9 @@ public class Interfaz2 extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -981,6 +971,8 @@ public class Interfaz2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -989,15 +981,11 @@ public class Interfaz2 extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1008,9 +996,6 @@ public class Interfaz2 extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

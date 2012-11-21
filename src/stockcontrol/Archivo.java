@@ -1,5 +1,6 @@
 package stockcontrol;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -72,5 +73,15 @@ public class Archivo {
             Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }   
-    }    
+    }
+    public boolean BorrarTodo(){
+        try {
+            f.delete();
+            f.createNewFile();
+            return true;
+        } catch (IOException ex) {
+            Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
 }
