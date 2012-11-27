@@ -8,22 +8,16 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
- *  @author Hugo
+ *
+ * @author Hugo
  */
-// <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-// #[regen=yes,id=DCE.DF71C809-D2D9-3353-B366-ABA551F07E82]
-// </editor-fold> 
 public class Principal {
 
     /**
-     *  @param args the command line arguments
+     * @param args the command line arguments
      */
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,id=DCE.CB196123-27B8-BFB9-2E54-DE0B53057811]
-    // </editor-fold> 
-    public static void main (String[] args) throws java.io.IOException {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
         Interfaz2 ui =  new Interfaz2();
         ui.setVisible(false);
